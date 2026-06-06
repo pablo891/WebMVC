@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Notas</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrapTheme.css">
+    <link rel="stylesheet" href="css/index.css">
+    
+</head>
+<body class="container">
+    
+    <h1 class="text-center mt-4">Cadastro de Notas</h1>
+    <div style="margin-bottom: 2rem">
+
+   
+    <div id="js-mensagem-view"></div>    
+    
+    <form class="form" onsubmit="alunoController.adiciona(event)">
+        
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" placeholder="Nome do Aluno" id="nome" class="form-control" required autofocus />
+        </div>
+
+        <div class="form-group">
+            <label for="primeiraNota">Primeira Nota</label>
+            <input type="number" placeholder="Nota 1 do Aluno" min="0" max="10" step="0.1" id="primeiraNota" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="segundaNota">Segunda Nota</label>
+            <input type="number" placeholder="Nota 2 do Aluno" min="0" max="10" step="0.1" id="segundaNota" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="frequencia">Percentual de Frequência</label>
+            <input type="number" id="frequencia" name="frequencia" min="0" max="100" step="1" placeholder="80%" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="provaFinal">Prova Final</label>
+            <input type="number" placeholder="Nota da prova final" min="0" max="10" step="0.1" id="provaFinal" class="form-control" disabled />
+        </div>
+
+        
+        <div class="text-center">
+            <button id="btnCadastro" class="btn btn-primary" 
+                    type="submit">Calcular Resultado</button>
+            <button class="btn btn-default" 
+                    type="reset">Limpar Formulário</button>
+        </div>
+    
+    </form>
+   </div> 
+    <div id="js-aluno-view">
+        
+    </div>
+
+    <script src="js/app/models/Aluno.js"></script>
+    <script src="js/app/views/AlunoViews.js"></script>
+    <script src="js/app/controllers/AlunoController.js"></script>
+    <script src="js/index.js"></script>
+
+    
+</body>
+</html>
